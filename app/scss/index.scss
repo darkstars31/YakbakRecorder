@@ -1,0 +1,48 @@
+body {
+	background-color: #333333;
+	color: #FF9900;
+} 
+
+span {
+  margin: 3px 3px 3px 3px;
+}
+
+div {
+  h1 {
+    font-size: 3em;
+  }
+
+  h2 {
+    font-size: 2em;
+  }
+}
+
+.center {
+  text-align: center;
+}
+
+.icon-m {
+  font-size:30px;
+  line-height: 110%;
+  color: orange;
+}
+
+.hdr {
+	height: 20px;
+    margin: 5px 20px 20px 20px;
+    border-bottom: thin solid #666666;
+	-webkit-app-region: drag;
+	-webkit-user-select: none;
+}
+
+.no-drag {
+    -webkit-app-region: no-drag;
+}
+
+.pinned-right {  
+    position: fixed;
+    right: 20px;
+    top: 0;
+}
+
+

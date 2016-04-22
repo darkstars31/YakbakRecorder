@@ -1,0 +1,24 @@
+
+<div class="hdr">
+	<div class="pinned-right no-drag">
+		<span id="window-settings"  ng-click="main.options()"><i class="mdi mdi-settings" aria-hidden="true"></i></span>
+		<span id="window-close"  ng-click="main.closeApp()"><i class="mdi mdi-window-close" aria-hidden="true"></i></span>
+	</div>
+</div>
+<div class="center">
+	<h2><em>Shadow</em>Rec</h2>
+</div>
+<div style="text-align: center;">
+	<button ng-click="main.startRecordingOnClick()"><i class="mdi mdi-record-rec icon-m" ng-hide="main.isRecording" aria-hidden="true"></i><i class="mdi mdi-pause icon-m" ng-show="main.isRecording" aria-hidden="true"></i></button>
+	<button ng-click="main.stopRecordingOnClick()"><i class="mdi mdi-stop icon-m" aria-hidden="true"></i></button>
+	Time: {{main.recordingLengthInSeconds}}
+</div>
+<div>
+	Filename:
+	<input type="text" id="file-name" value="{{main.filename}}" ng-model="main.filename" />
+	Sample Rate:
+	<input type="text" id="sample-rate" value="{{main.sampleRate}}" ng-model="main.sampleRate" />
+	Audio Track: <select ng-model="main.audioTracks">
+		<option ng-repeat="track in main.audioTracks" value="{{track}}">{{track}}</option>
+	</select>
+</div>
