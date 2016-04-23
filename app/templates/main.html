@@ -9,16 +9,18 @@
 	<h2><em>Shadow</em>Rec</h2>
 </div>
 <div style="text-align: center;">
-	<button ng-click="main.startRecordingOnClick()"><i class="mdi mdi-record-rec icon-m" ng-hide="main.isRecording" aria-hidden="true"></i><i class="mdi mdi-pause icon-m" ng-show="main.isRecording" aria-hidden="true"></i></button>
-	<button ng-click="main.stopRecordingOnClick()"><i class="mdi mdi-stop icon-m" aria-hidden="true"></i></button>
+	<span ng-click="main.startRecordingOnClick()"><i class="mdi mdi-record-rec icon-m" ng-hide="main.isRecording" aria-hidden="true"></i><i class="mdi mdi-pause icon-m" ng-show="main.isRecording" aria-hidden="true"></i></span>
+	<span ng-click="main.stopRecordingOnClick()"><i class="mdi mdi-stop icon-m" aria-hidden="true"></i></span>
 	Time: {{main.recordingLengthInSeconds}}
 </div>
+<br />
 <div>
 	Filename:
-	<input type="text" id="file-name" value="{{main.filename}}" ng-model="main.filename" />
+	<input type="text" id="file-name" value="{{main.filename}}" ng-model="main.filename" /><br />
 	Sample Rate:
 	<input type="text" id="sample-rate" value="{{main.sampleRate}}" ng-model="main.sampleRate" />
-	Audio Track: <select ng-model="main.audioTracks">
+	<!--Audio Track: <select ng-model="main.audioTracks">
 		<option ng-repeat="track in main.audioTracks" value="{{track}}">{{track}}</option>
 	</select>
+	-->
 </div>

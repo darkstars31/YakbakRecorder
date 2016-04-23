@@ -24,6 +24,7 @@ const useref = require('gulp-useref')
 const replace = require('gulp-replace')
 const electron = require('electron-connect').server.create()
 const electronPackager = require('gulp-atom-electron')
+const concat = require('gulp-concat');
 const symdest = require('gulp-symdest')
 const zip = require('gulp-vinyl-zip')
 
@@ -32,7 +33,7 @@ const electronVersion = require('electron-prebuilt/package.json').version
 /* These are the building tasks! */
 
 gulp.task('build-client-bundles', (done) => {
-  glob('./app/js/*.js', (err, files) => {
+  glob('./app/js/**/*.js', (err, files) => {
     if (err) done(err)
 
     let tasks = files.map((entry) => {
@@ -207,7 +208,7 @@ gulp.task('lint', ['lint-client', 'lint-server'])
 gulp.task('serve', ['build', 'watch'], () => {
   electron.start()
   gulp.watch('./build/index.js', electron.restart)
-  gulp.watch(['./build/js/*.js', './build/css/*.css'], electron.reload)
+  gulp.watch(['./build/js/**/*.js', './build/css/*.css'], electron.reload)
 })
 
 /* These are the packaging tasks! */
